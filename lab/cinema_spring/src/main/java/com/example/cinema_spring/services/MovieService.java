@@ -15,7 +15,7 @@ public class MovieService {
 
 
     public MovieService(){
-    }
+     }
 
 
     public Movie getMovieById(long id) {
@@ -26,7 +26,17 @@ public class MovieService {
         return movieRepository.findAll();
     }
 
-    public Movie addToMovie(Movie movie){
+
+//    method to add movie or save movie
+    public Movie saveMovieToList(Movie movie){
         return movieRepository.save(movie);
     }
+
+
+   // method to delete
+    public void removeMovie(long id){
+        movieRepository.deleteById(id);
+    }
+
+    // method to update
 }
